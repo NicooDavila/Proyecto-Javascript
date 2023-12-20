@@ -1,16 +1,4 @@
-// function checkearcredencial() {
-//     let usuario = ""; // Deje el espacio vacio para que se inicie con cualquier credencial
-//     let contraseña = "";
-//     let usuario_i = prompt("ingrese usuario", "@gmail.com");
-//     let contraseña_i = prompt("contraseña");
-//     if (usuario_i != usuario && contraseña_i != contraseña) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
 const BOTON_INICIO = document.getElementById("botonInicio")
-
 const usuarioCorrecto = "Nico";
 const contraseñaCorrecta = "1899";
 
@@ -35,126 +23,74 @@ BOTON_INICIO.addEventListener("click",()=> {
     })
 })
 
-// function elegirGenero() {
-//     alert(
-//         "Elija sus géneros preferidos (Aventura, Deportes, Estrategia, Simulador, Terror)"
-//     );
-//     const género = prompt("ingrese género");
-//     switch (género) {
-//         case "Aventura":
-//             alert("seleccionaste Aventura");
-//             return género;
+const carrito = document.getElementById('carrito');
+const elementos = document.getElementById('lista-1');
+const lista = document.querySelector('#lista-carrito tbody');
+const vaciarCarritoBtn =document.getElementById('vaciar-carrito');
 
-//         case "Deportes":
-//             alert("seleccionaste Deportes");
-//             return género;
+cargarEventListeners();
 
-//         case "Estrategia":
-//             alert("seleccionaste Estrategia");
-//             return género;
-
-//         case "Simulador":
-//             alert("seleccionaste Simulador");
-//             return género;
-
-//         case "Terror":
-//             alert("seleccionaste Terror");
-//             return género;
-
-//         default:
-//             alert("seleccion invalida");
-//             return elegirGenero();
-//     }
-// }
-
-// function main() {
-//     alert("Bienvenido a JuegosPC");
-//     alert("inicie sesion");
-
-//     if (!checkearcredencial()) {
-//         // Aca chequeo las credenciales
-//         alert("Datos incorrectos");
-//         return;
-//     }
-
-//     alert("datos correctos");
-//     const edad = prompt("Eres mayor de edad? \nSi/no");
-
-//     if (!(edad.toLowerCase() == "si")) {
-//         // Aca chequeo si es mayor de edad
-//         alert("Debes ser mayor de edad");
-//         return;
-//     }
-
-    // const productos = [
-    //     { nombre: "God Of War", precio: 80, genero: "Aventura" },
-    //     { nombre: "Spiderman", precio: 44, genero: "Aventura" },
-    //     { nombre: "Minecraft", precio: 20, genero: "Aventura" },
-    //     { nombre: "Fifa 23", precio: 120, genero: "Deportes" },
-    //     { nombre: "NBA 2K23", precio: 70, genero: "Deportes" },
-    //     { nombre: "Dirt 5", precio: 30, genero: "Deportes" },
-    //     { nombre: "King Arthur", precio: 55, genero: "Estrategía" },
-    //     { nombre: "Mount and Blade 2", precio: 40, genero: "Estrategía" },
-    //     { nombre: "Plague", precio: 5, genero: "Estrategía" },
-    //     { nombre: "Car Simulator", precio: 30, genero: "Simulador" },
-    //     { nombre: "Farming Simulator 2022", precio: 35, genero: "Simulador" },
-    //     { nombre: "Gran Turismo", precio: 24, genero: "Simulador" },
-    //     { nombre: "Resident Evil 7", precio: 60, genero: "Terror" },
-    //     { nombre: "Metro Exodus", precio: 50, genero: "Terror" },
-    //     { nombre: "Alan Wake", precio: 30, genero: "Terror" },
-    // ];
-    // let carrito = [];
-
-
-    // let seleccion = ""
-    // do {
-    //     alert("BIENVENIDO");
-    //     seleccion = prompt("Desear comprar algo?, si o no ");
-        
+function cargarEventListeners() {
     
-    // } while (seleccion != "si")
-    
+    elementos.addEventListener('click', comprarElemento);
+    carrito.addEventListener('click', eliminarElemento);
+    vaciarCarritoBtn.addEventListener('click', vaciarCarrito)
+}
 
-    // const genero = elegirGenero();
+function comprarElemento(e) {
+    e.preventDefault();
+    if(e.target.classList.contains('agregar-carrito')) {
+        const elemento = e.target.parenElement.parenElement;
+        leerDatosElemento(elemento);
+    }
+}
+function leerDatosElemento(elemento) {
+    const infoElemento = {
+        imagen: elemento.querySelector('img').src,
+        titulo: elemento.querySelector('h3').textContent,
+        precio: elemento.querySelector('.precio').textContent,
+        id: elemento.querySelector('a').getAtribute('data-id')
+    }
+    insertarCarrito(infoElemento)
+}
 
-    // const productos_filtrados = productos.filter(producto => producto.genero === genero);
-    
-    
+function insertarCarrito(elemento) {
 
-    // alert("lista de productos");
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>
+            <img src="${elemento.imagen}" width=100 />
+        </td>
+        <td>
+            ${elemento.titulo}
+        </td>
+        <td>
+            ${elemento.precio}
+        </td>
+        <td>
+            <a herf="#" class="borrar" data-id= "${elemento.id}">X </a>
+        </td>
+    `;
 
-    // let todoslosProductos = productos_filtrados.map(
-    //     (producto) => producto.nombre + " " + "$" +  producto.precio 
-    // );
-    // alert(todoslosProductos.join(" - "));
+    lista.appendChild(row);
+}
 
-    // const producto = prompt("Agregar producto");
-    
-    // let precio = 0
+function eliminarElemento(e) {
+    e.preventDefault();
+    let elemento,
+        elementoId;
+    if(e.target.classList.contains('borrar')) {
+        e.target.parenElement.parenElement.remove();
+        elemento = e.target.parenElement.parenElement;
+        elementoId = elemento.querySelector('a').getAtribute('data-id');
+    }
+}
 
-    // for (let i = 0; i < productos_filtrados.length; i++) {
-    //     if (productos_filtrados[i].nombre == producto) {
-    //         precio = productos_filtrados[i].precio
-    //         console.log("El precio es " + productos_filtrados[i].precio);
-    //     }
-    // }
+function vaciarCarrito() {
+    while(lista.firstChild) {
+        lista.removeChild(lista.firstChild);
+    }
+    return false;
+}
 
-
-    // let unidades = parseInt(prompt("cuantas unidades quiere comprar"));
-
-    // carrito.push({ producto, unidades, precio });
-
-    // // seleccion = prompt("desea seguir comprando?");
-
-    // alert("gracias por la compra, hasta pronto!");
-    // carrito.forEach((carritoFinal) => {
-    //     alert(
-    //         `producto: ${carritoFinal.producto}, unidades: ${carritoFinal.unidades
-    //         }, total del pago ${carritoFinal.unidades * carritoFinal.precio}`
-    //     );
-    // });
-
-//     const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0);
-//     console.log(`el total a pagar por su compra es: ${total}`);
-// // }
-main();
+// main();

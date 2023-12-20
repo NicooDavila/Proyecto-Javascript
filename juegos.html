@@ -1,220 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlayPalace</title>
     <link rel="shortcut icon" href="./assets/img/controlador.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
-<body class="body bg-dark">
-    <header>
-        <nav class="navbar navbar-expand-lg bg-dark-subtle">
-            <div class="container-fluid">
-                <img src="./assets/img/controlador.ico" alt="">
-                <a class="navbar-brand" href="#">PlayPalace</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <div>
-                        <a href=""><img src="./assets/img/carrito-de-compras.png" alt="carrito compra" class="carro"><span id="cuenta-carrito">0</span></a>
-                    </div>
+<body>
+    <header class="header">
+
+        <div class="menu container">
+            <img src="./assets/img/controlador.ico" class="logo" alt="logo pagina">
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="./assets/img/menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html"> Inicio</a></li>
+                    <li><a href=""> Inicio</a></li>
+                    <li><a href=""> Inicio</a></li>
+                    <li><a href=""> Inicio</a></li>
                 </ul>
-                </div>
-            </div>
             </nav>
+
+            <div>
+                <ul>
+                    <li class="submenu">
+                        <img src="./assets/img/car.svg" id="img-carrito" alt="carrito">
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+
+                            </table>
+                            <a href="" id="vaciar-carrito" class="btn-2">Vaciar Carro</a>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="header-content container">
+            <div class="header-img">
+                <img src="./assets/img/juegos2021.jpg" alt="imagen del banner">
+            </div>
+            <div class="header-text">
+                <h1>Principales juegos del año</h1>
+                <p>Consegui los mejores juegos al mejor precio</p>
+            </div>
+        </div>
     </header>
 
-    <main>
+    <main class="productos container" id="lista-1">
 
-        <div>
-    <div class="container-fluid">
-        <div class="card" style="width: 18rem;">
-            <a href="./GodOfWar.html"> <img src="./assets/img/GodOfWar.webp" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-                <p class="card-text">God Of War</p>
-                <p class="Precio">Precio: $80 </p>
-            </div>
-            
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/Spiderman.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Spiderman</p>
-                <p class="Precio">Precio: $44 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/Minecraft.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Minecraft</p>
-                <p class="Precio">Precio: $20 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    </div>
+        <h2>TENDENCIAS</h2>
 
-    <div class="container-fluid">
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/Fifa_23.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">FIFA 23</p>
-                <p class="Precio">Precio: $120 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/NBA2K23.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">NBA 2K23</p>
-                <p class="Precio">Precio: $70 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/Dirt_5.jfif" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Dirt 5</p>
-                <p class="Precio">Precio: $30 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    </div>
+        <div class="producto">
 
-    <div class="container-fluid">
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/King_Arthur.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">King Arthur</p>
-                <p class="Precio">Precio: $55 </p>
+            <div class="juego">
+                <img src="./assets/img/GodOfWar.webp" alt="juego">
+                <div class="juego-texto">
+                    <h3>God Of War</h3>
+                    <h4>Género: Aventura</h4>
+                    <p class="precio">$80</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar al carrito</a>
+                </div>
             </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
+            <div class="juego">
+                <img src="./assets/img/Alan_Wake_Remastered.webp" alt="juego">
+                <div class="juego-texto">
+                    <h3>Alan Wake</h3>
+                    <h4>Género: Terror</h4>
+                    <p class="precio">$90</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/Car_Simulator.webp" alt="juego">
+                <div class="juego-texto">
+                    <h3>Car Simulator</h3>
+                    <h4>Género: Simulador</h4>
+                    <p class="precio">$30</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/Dirt_5.jfif" alt="juego">
+                <div class="juego-texto">
+                    <h3>Dirt 5</h3>
+                    <h4>Género: Deportes</h4>
+                    <p class="precio">$50</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/Farming_Simulator_2022.jpg" alt="juego">
+                <div class="juego-texto">
+                    <h3>Farming Simulator 2022</h3>
+                    <h4>Género: Simulador </h4>
+                    <p class="precio">$15</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/Fifa_23.jpg" alt="juego">
+                <div class="juego-texto">
+                    <h3>Fifa 23</h3>
+                    <h4>Género: Deportes</h4>
+                    <p class="precio">$130</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/Gran_Turismo_7.webp" alt="juego">
+                <div class="juego-texto">
+                    <h3>Gran Turismo 7</h3>
+                    <h4>Género: Simulador</h4>
+                    <p class="precio">$35</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="7">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/King_Arthur.jpg" alt="juego">
+                <div class="juego-texto">
+                    <h3>King Arthur</h3>
+                    <h4>Género: Estrategia</h4>
+                    <p class="precio">$25</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="8">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/Metro_Exodus.jpg" alt="juego">
+                <div class="juego-texto">
+                    <h3>Metro Exodus</h3>
+                    <h4>Género: Terror</h4>
+                    <p class="precio">$80</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="9">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/Minecraft.webp" alt="juego">
+                <div class="juego-texto">
+                    <h3>Minecraft</h3>
+                    <h4>Género: Aventura</h4>
+                    <p class="precio">$15</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="10">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/mount-and-blade-2-bannerlord.jpg" alt="juego">
+                <div class="juego-texto">
+                    <h3>Mount and Blade 2</h3>
+                    <h4>Género: Estrategia</h4>
+                    <p class="precio">$40</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="11">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/NBA2K23.jpg" alt="juego">
+                <div class="juego-texto">
+                    <h3>NBA 2K23</h3>
+                    <h4>Género: Deportes</h4>
+                    <p class="precio">$40</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="12">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/Plague_Inc.jpg" alt="juego">
+                <div class="juego-texto">
+                    <h3>Plague</h3>
+                    <h4>Género: Estrategía</h4>
+                    <p class="precio">$45</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="13">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/resident-evil-7-biohazard.jpg" alt="juego">
+                <div class="juego-texto">
+                    <h3>Resident Evil 7</h3>
+                    <h4>Género: Terror</h4>
+                    <p class="precio">$30</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="14">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="juego">
+                <img src="./assets/img/Spiderman.jpg" alt="juego">
+                <div class="juego-texto">
+                    <h3>Spiderman</h3>
+                    <h4>Género: Aventura</h4>
+                    <p class="precio">$75</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="15">Agregar al carrito</a>
+                </div>
             </div>
         </div>
         
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/mount-and-blade-2-bannerlord.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Mount and Blade 2</p>
-                <p class="Precio">Precio: $40 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-        
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/Plague_Inc.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Plague</p>
-                <p class="Precio">Precio: $5 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/Car_Simulator.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Car Simulator</p>
-                <p class="Precio">Precio: $30 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/Farming_Simulator_2022.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Farming Simulator 2022</p>
-                <p class="Precio">Precio: $35 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/Gran_Turismo_7.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Gran Turismo</p>
-                <p class="Precio">Precio: $24 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/resident-evil-7-biohazard.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Resident Evil 7</p>
-                <p class="Precio">Precio: $60 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/Metro_Exodus.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Metro Exodus</p>
-                <p class="Precio">Precio: $50 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    
-        <div class="card" style="width: 18rem;">
-            <img src="./assets/img/Alan_Wake_Remastered.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Alan Wake</p>
-                <p class="Precio">Precio: $30 </p>
-            </div>
-            <div>
-                <button class="button-57" role="button"><span class="text">Comprar</span><span>Agregar al carrito</span></button>
-            </div>
-        </div>
-    </div>
-
-</div>
-
 
     </main>
 
@@ -226,6 +217,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
-<script src="./js/index.js"> </script>
+<script src="./js/index.js"></script>
 </body>
 </html>
