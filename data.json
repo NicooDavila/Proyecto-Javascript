@@ -1,0 +1,107 @@
+[
+    {
+        "nombre": "God Of War",
+        "descripcion": "Aventura",
+        "precio":"55",
+        "imagen":
+        "./assets/img/GodOfWar.webp"
+    },
+    {
+        "nombre": "Alan Wake",
+        "descripcion": "Terror",
+        "precio":"40",
+        "imagen":
+            "./assets/img/Alan_Wake_Remastered.webp"
+        },
+        {
+        "nombre": "Car Simulator",
+        "descripcion": "Simulador",
+        "precio":"10",
+        "imagen":
+            "./assets/img/Car_Simulator.webp"
+        },
+        {
+        "nombre": "Dirt 5",
+        "descripcion": "Simulador",
+        "precio":"35",
+        "imagen":
+            "./assets/img/Dirt_5.jfif"
+        },
+        {
+        "nombre": "Farming Simulator 2022",
+        "descripcion": "Simulador",
+        "precio":"25",
+        "imagen":
+            "./assets/img/Farming_Simulator_2022.jpg"
+        },
+        {
+        "nombre": "FIFA 23",
+        "descripcion": "Deportes",
+        "precio":"124",
+        "imagen":
+            "./assets/img/Fifa_23.jpg"
+        },
+        {
+        "nombre": "Gran Turismo 7",
+        "descripcion": "Deportes",
+        "precio":"47",
+        "imagen":
+            "./assets/img/Gran_Turismo_7.webp"
+        },
+        {
+        "nombre": "King Arthur",
+        "descripcion": "Estrategía",
+        "precio":"15",
+        "imagen":
+            "./assets/img/King_Arthur.jpg"
+        },
+        {
+        "nombre": "Metro Exodus",
+        "descripcion": "Terror",
+        "precio":"80",
+        "imagen":
+            "./assets/img/Metro_Exodus.jpg"
+        },
+        {
+        "nombre": "Minecraft",
+        "descripcion": "Aventura",
+        "precio":"15",
+        "imagen":
+            "./assets/img/Minecraft.webp"
+        },
+        {
+        "nombre": "Mount and Blade 2",
+        "descripcion": "Estrategía",
+        "precio":"20",
+        "imagen":
+            "./assets/img/mount-and-blade-2-bannerlord.jpg"
+        },
+        {
+        "nombre": "NBA 2K23",
+        "descripcion": "Deportes",
+        "precio":"90",
+        "imagen":
+            "./assets/img/NBA2K23.jpg"
+        },
+        {
+        "nombre": "Plague",
+        "descripcion": "Estrategía",
+        "precio":"5",
+        "imagen":
+            "./assets/img/Plague_Inc.jpg"
+        },
+        {
+        "nombre": "Resident Evil 7",
+        "descripcion": "Terror",
+        "precio":"75",
+        "imagen":
+            "./assets/img/resident-evil-7-biohazard.jpg"
+        },
+        {
+        "nombre": "Spiderman",
+        "descripcion": "Aventura",
+        "precio":"60",
+        "imagen":
+            "./assets/img/Spiderman.jpg"
+        }
+    ]

@@ -1,69 +1,72 @@
-const carrito = document.getElementById('carrito');
-const elementos = document.getElementById('lista-1');
-const lista = document.querySelector('#lista-carrito tbody');
-const vaciarCarritoBtn =document.getElementById('vaciar-carrito');
-
-cargarEventListeners();
-
-function cargarEventListeners() {
+let productos = []
+async function getProducts(){
+    const response = await fetch("data.json");
+    const data = await response.json();
+    productos = data
     
-    elementos.addEventListener('click', comprarElemento);
-    carrito.addEventListener('click', eliminarElemento);
-    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
+        const contenedorTienda = document.getElementById("tienda");
+        console.log(productos[0])
+        for (i = 0; i < carrito.length; i++) {
+            actualizarCarrito(carrito[i].producto, carrito[i].cantidad)
+            } 
+        productos.forEach((producto, index) => {
+            const div = document.createElement("div");
+            div.className = "producto";
+            div.innerHTML = `
+                        <img src="${producto.imagen}" alt="${producto.nombre}">
+                        <h2>${producto.nombre}</h2>
+                        <p>${producto.descripcion}</p>
+                        <h3>$${producto.precio}</h3>
+                        <input type="number" min="1" value="1" class="cantidad">
+                    <button class="btn-agregar">Agregar al Carrito</button>
+                    `;
+            contenedorTienda.appendChild(div);
+            
+            div
+            .querySelector(".btn-agregar")
+            .addEventListener("click", () => agregarAlCarrito(index));
+        });
+
+
+};
+getProducts()
+
+
+
+
+let carrito = JSON.parse(localStorage.getItem("product"));
+if(carrito == null){
+    carrito = []
+}
+function agregarAlCarrito(indexProducto) {
+    const producto = productos[indexProducto];
+    const cantidad =
+        document.getElementsByClassName("cantidad")[indexProducto].value;
+    carrito.push({
+        producto: producto,
+        cantidad: cantidad,
+    })
+    saveLocal();
+    actualizarCarrito(producto, cantidad);
+    
 }
 
-function comprarElemento(e) {
-    e.preventDefault();
-    if(e.target.classList.contains('agregar-carrito')) {
-        const elemento = e.target.parentElement.parentElement;
-        leerDatosElemento(elemento);
-    }
-}
-function leerDatosElemento(elemento) {
-    const infoElemento = {
-        imagen: elemento.querySelector('img').src,
-        titulo: elemento.querySelector('h3').textContent,
-        precio: elemento.querySelector('.precio').textContent,
-        id: elemento.querySelector('a').getAttribute('data-id')
-    }
-    insertarCarrito(infoElemento)
+const saveLocal = () => {
+    localStorage.setItem("product", JSON.stringify(carrito));
 }
 
-function insertarCarrito(elemento) {
+function actualizarCarrito(producto, cantidad){
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+            <td><img src="${producto.imagen}" alt="${producto.nombre}" style="width:50px;height:50px;"></td>
+            <td>${producto.nombre}</td>
+            <td>${cantidad}</td>
+          <td>$${producto.precio * cantidad}</td>
+        `;
 
-    const row = document.createElement('tr');
-    row.innerHTML = `
-        <td>
-            <img src="${elemento.imagen}" width=100 />
-        </td>
-        <td>
-            ${elemento.titulo}
-        </td>
-        <td>
-            ${elemento.precio}
-        </td>
-        <td>
-            <a href="#" class="borrar" data-id= "${elemento.id}">X </a>
-        </td>
-    `;
 
-    lista.appendChild(row);
+    const tbody = document.querySelector("#lista-carrito tbody");
+    tbody.appendChild(tr);
+
 }
 
-function eliminarElemento(e) {
-    e.preventDefault();
-    let elemento,
-        elementoId;
-    if(e.target.classList.contains('borrar')) {
-        e.target.parentElement.parentElement.remove();
-        elemento = e.target.parentElement.parentElement;
-        elementoId = elemento.querySelector('a').getAttribute('data-id');
-    }
-}
-
-function vaciarCarrito() {
-    while(lista.firstChild) {
-        lista.removeChild(lista.firstChild);
-    }
-    return false;
-}
